@@ -3,14 +3,14 @@ import { useState } from "react";
 import axios from "axios";
 
 const Home: NextPage = () => {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
 
-  const loginHandler = (username: string, password: string) => {
+  const loginHandler = (email: string, password: string) => {
     axios
       .post("/api/login", {
-        username,
+        email,
         password,
       })
       .then((res) => {
@@ -45,14 +45,14 @@ const Home: NextPage = () => {
               htmlFor="username"
               className="text-xl font-normal text-center p-2"
             >
-              Username
+              E-Mail
             </label>
             <input
               type="text"
-              id="username"
+              id="email"
               className="border-2 border-gray-300 p-2 rounded-md"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
 
             <label
@@ -72,7 +72,7 @@ const Home: NextPage = () => {
             <button
               type="submit"
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-10"
-              onClick={() => loginHandler(username, password)}
+              onClick={() => loginHandler(email, password)}
             >
               Login
             </button>
