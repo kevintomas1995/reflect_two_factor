@@ -20,7 +20,7 @@ export default async function handler(
       res.status(200).json({ success: true });
 
       const info = await emailer.sendMail({
-        from: '"Registration system" <reg@company.co>',
+        from: '"Registration system" <test1234@gmail.com>',
         to: email,
         subject: "Confirmation link",
         text: `http://localhost:3000/verification?email=${email}&verificationCode=${verificationCode}`,
