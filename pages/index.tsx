@@ -78,7 +78,7 @@ const Home: NextPage = () => {
             </button>
 
             {error && (
-              <p className="text-red-500 text-center mt-5">
+              <p className="text-red-500 text-center mt-5" id="error">
                 Username or password is incorrect
               </p>
             )}

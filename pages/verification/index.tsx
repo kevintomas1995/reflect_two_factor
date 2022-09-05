@@ -20,7 +20,7 @@ const Verification: NextPage = () => {
         if (res.status === 200) {
           setLoaded(true);
           setIsVerified(true);
-        } 
+        }
       })
       .catch((err) => {
         console.log("err", err);
@@ -50,7 +50,7 @@ const Verification: NextPage = () => {
       {isVerified && (
         <div className="flex w-full justify-center items-center flex-col">
           <h1 className="text-4xl font-bold text-center px-1">Success</h1>
-          <p className="text-xl font-normal text-center p-2">
+          <p className="text-xl font-normal text-center p-2" id="success">
             You have successfully logged in
           </p>
         </div>
@@ -58,7 +58,7 @@ const Verification: NextPage = () => {
       {!isVerified && loaded && (
         <div className="flex w-full justify-center items-center flex-col">
           <h1 className="text-4xl font-bold text-center px-1">Oooops....</h1>
-          <p className="text-xl font-normal text-center p-2">
+          <p className="text-xl font-normal text-center p-2" id="error">
             Something went wrong
           </p>
         </div>
